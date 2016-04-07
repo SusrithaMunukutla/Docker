@@ -95,6 +95,7 @@ RUN buildDeps=' \
   && sed -e 's!/usr/local/var/log/couchdb/couch.log$!/dev/null!' -i /usr/local/etc/couchdb/default.ini
 COPY docker-entrypoint.sh ~/
 # Define mountable directories.
+RUN chmod +x docker-entrypoint.sh
 VOLUME ["/usr/local/var/lib/couchdb"]
 EXPOSE 5984
 WORKDIR /var/lib/couchdb
