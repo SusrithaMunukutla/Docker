@@ -98,6 +98,6 @@ COPY docker-entrypoint.sh /
 VOLUME ["/usr/local/var/lib/couchdb"]
 EXPOSE 5984
 WORKDIR /var/lib/couchdb
-RUN chmod +x docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
 CMD ["couchdb"]
